@@ -79,11 +79,12 @@ $("#sendGmail").on("click", function () {
   let receptEmail = $("#emails option:selected").text();
   $(this).addClass("loading");
   $.ajax({
-    type: "GET",
+    type: "POST",
     url: "dashboard/sendEmail",
     data: { receptEmail: receptEmail },
     dataType: "json",
     success: function (response) {
+      console.log(response);
       $("#sendGmail").removeClass("loading");
       displaySnackbar("Email was Sent successfully", "success", function () {});
     },

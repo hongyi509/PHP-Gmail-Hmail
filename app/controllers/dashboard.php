@@ -3,9 +3,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-// require_once '../app/vendor/phpmailer/phpmailer/src/Exception.php';
-// require_once '../app/vendor/phpmailer/phpmailer/src/PHPMailer.php';
-// require_once '../app/vendor/phpmailer/phpmailer/src/SMTP.php';
+require_once '../app/vendor/phpmailer/phpmailer/src/Exception.php';
+require_once '../app/vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require_once '../app/vendor/phpmailer/phpmailer/src/SMTP.php';
 require_once '../app/vendor/autoload.php';
 require_once '../app/services/GoogleContactService.php';
 class Dashboard extends Controller
