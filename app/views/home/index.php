@@ -28,7 +28,7 @@
       <div>
         <img src="/img/outlook_cover_640x360.jpg" width="350px" height="200px"/>
       </div>
-      <a class="btn btn-success btn-lg" href="#">
+      <a class="btn btn-success btn-lg" href="/dashboard">
         HotMail Login
       </a>
     </div>
