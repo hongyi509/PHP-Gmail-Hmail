@@ -14,7 +14,6 @@ class Dashboard extends Controller
         // $contact_service = new GoogleContactService($auth_service);
         // $result = $contact_service->get_contacts();
         // $data = $result['feed']['entry'];
-        echo('dashboar');
         return parent::view('dashboard/index', []);
     }
 // Get google contacts

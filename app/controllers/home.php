@@ -11,7 +11,7 @@ class Home extends Controller
                 $auth_service->get_token($_GET['code']);
                 // Save the access token as a session variable
                 // Redirect to the page where user can create event
-                header('Location: dashboard');
+                header('Location: https://thawing-headland-68770.herokuapp.com/dashboard');
                 die();
             } catch (Exception $e) {
                 echo $e->getMessage();
