@@ -56,38 +56,73 @@ class Dashboard extends Controller
         //     echo('<p>Message successfully sent!</p>');
         // }
         // passing true in constructor enables exceptions in PHPMailer
-        $mail = new PHPMailer(true);
+        // $mail = new PHPMailer(true);
 
-        try {
-            // Server settings
-            $mail->IsSMTP();
-            $mail->Mailer = "smtp";
-            $mail->SMTPDebug = 1; // for detailed debug output
-            $mail->SMTPAuth = TRUE;
-            $mail->SMTPSecure = "tls";
-            $mail->Port = 587;
-            $mail->Host = 'ssl://smtp.gmail.com';
+        // try {
+        //     // Server settings
+        //     $mail->IsSMTP();
+        //     $mail->Mailer = "smtp";
+        //     $mail->SMTPDebug = 1; // for detailed debug output
+        //     $mail->SMTPAuth = TRUE;
+        //     $mail->SMTPSecure = "tls";
+        //     $mail->Port = 587;
+        //     $mail->Host = 'ssl://smtp.gmail.com';
 
-            $mail->Username = 'Huang.ming.business@gmail.com'; // YOUR gmail email
-            $mail->Password = 'letitgo2018'; // YOUR gmail password
+        //     $mail->Username = 'Huang.ming.business@gmail.com'; // YOUR gmail email
+        //     $mail->Password = 'letitgo2018'; // YOUR gmail password
 
-            // Sender and recipient settings
-            $mail->SetFrom('Huang.ming.business@gmail.com', 'sender');
-            $mail->AddAddress('reactist313@hotmail.com', 'react');
-            $mail->AddReplyTo('Huang.ming.business@gmail.com', 'Sender Name'); // to set the reply to
-            // Setting the email content
-            $mail->IsHTML(true);
-            $mail->Subject = "Send email using Gmail SMTP and PHPMailer";
-            $mail->Body = 'HTML message body. <b>Gmail</b> SMTP email body.';
-            $mail->AltBody = 'Plain text message body for non-HTML email client. Gmail SMTP email body.';
-			// $mail->MsgHTML($content);
+        //     // Sender and recipient settings
+        //     $mail->SetFrom('Huang.ming.business@gmail.com', 'sender');
+        //     $mail->AddAddress('reactist313@hotmail.com', 'react');
+        //     $mail->AddReplyTo('Huang.ming.business@gmail.com', 'Sender Name'); // to set the reply to
+        //     // Setting the email content
+        //     $mail->IsHTML(true);
+        //     $mail->Subject = "Send email using Gmail SMTP and PHPMailer";
+        //     $mail->Body = 'HTML message body. <b>Gmail</b> SMTP email body.';
+        //     $mail->AltBody = 'Plain text message body for non-HTML email client. Gmail SMTP email body.';
+		// 	// $mail->MsgHTML($content);
 
-            $mail->Send();
-            echo json_encode(['message' => 'success']);
-        } catch (Exception $e) {
-            echo json_encode(['message' => $mail->ErrorInfo]);
-            // echo "Error in sending email. Mailer Error: {$mail->ErrorInfo}";
-        }
+        //     $mail->Send();
+        //     echo json_encode(['message' => 'success']);
+        // } catch (Exception $e) {
+        //     echo json_encode(['message' => $mail->ErrorInfo]);
+        //     // echo "Error in sending email. Mailer Error: {$mail->ErrorInfo}";
+        // }
+    
+// create an mailer object
+    $mail = new PHPMailer();
+    $mail->IsSMTP();
+    $mail->Mailer = "smtp";
+
+    $mail->SMTPDebug  = 1;  
+    $mail->SMTPAuth   = TRUE;
+    $mail->SMTPSecure = "tls";
+    $mail->Port       = 587;
+    $mail->Host       = "smtp.gmail.com";
+    $mail->Username   = "Huang.ming.business@gmail.com";
+    $mail->Password   = "letitgo2018";
+// Mail Content
+    $mail->IsHTML(true);
+    $mail->AddAddress("reactist313@hotmail.com", "Sender Display Name");
+    $mail->SetFrom("reactist313@hotmail.com", "Recipient Display Name");
+    // $mail->AddReplyTo("destinatin.id@domain.com", "Recipient Display Name"); - Enable if this is different from the sender mail id.
+    // $mail->AddCC("destinatin.id@domain.com", "Sender Display Name"); - Add any CC 
+    $mail->Subject = "Test Email using PHP Mailer";
+    $content = "<b>This is a Test Email sent via SMTP Server using PHP mailer class.</b>";
+// Attach file
+    // Directly attach f file
+    // $mail->addAttachment('img/loading.gif', 'loading.gif');
+
+    // Build the attachment 
+    // $mail->AddStringAttachment(base64_decode("iVBORw0KGgoAAAANSUhEUgAAA"), "test.png", "base64", "image/png");
+// Send Mail
+    $mail->MsgHTML($content); 
+    if(!$mail->Send()) {
+    echo "Error while sending Email.";
+    var_dump($mail);
+    } else {
+    echo "Email sent successfully";
     }
+}
 
 }
