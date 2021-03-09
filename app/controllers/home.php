@@ -18,6 +18,8 @@ class Home extends Controller
             }
         }
         if (isset($_SESSION['access_token']) && isset($_COOKIE['refresh_token'])) {
+            $home_url = 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) ;
+            echo($home_url);
             header('Location: dashboard');
         }
         $data = ['title' => 'Email Handling App', 'login_url' => $auth_service->create_auth_url()];
