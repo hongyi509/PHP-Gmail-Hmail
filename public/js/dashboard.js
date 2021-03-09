@@ -28,7 +28,7 @@ function displaySnackbar(message, type, next) {
 $("#extractContacts").on("click", function () {
   $(this).addClass("loading");
   $.ajax({
-    type: "GET",
+    type: "POST",
     url: "dashboard/getContacts",
     // data: { data: "" },
     dataType: "json",
@@ -44,7 +44,7 @@ $("#extractContacts").on("click", function () {
     error: function (response) {
       console.log("failed delete", response);
       $(".extract_contacts_gmail").removeClass("loading");
-      alert(response.responseJSON.message);
+      // alert(response.responseJSON.message);
     },
   });
 });
