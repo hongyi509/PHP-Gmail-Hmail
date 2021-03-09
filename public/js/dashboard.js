@@ -79,7 +79,7 @@ $("#sendGmail").on("click", function () {
   let receptEmail = $("#emails option:selected").text();
   $(this).addClass("loading");
   $.ajax({
-    type: "POST",
+    type: "GET",
     url: "dashboard/sendEmail",
     data: { receptEmail: receptEmail },
     dataType: "json",
