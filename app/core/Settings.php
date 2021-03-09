@@ -13,7 +13,8 @@ function getBaseUrl()
     return $protocol . '://' . $host;
 }
 
-$BASE_URL = getBaseUrl();
+// $BASE_URL = getBaseUrl();
+$BASE_URL = 'https://thawing-headland-68770.herokuapp.com';
 /* Google App Client Id */
 define('CLIENT_ID', '233119568975-l0t6n9934cqq9tiulkpd1jk6hu0trs4s.apps.googleusercontent.com');
 
@@ -21,5 +22,5 @@ define('CLIENT_ID', '233119568975-l0t6n9934cqq9tiulkpd1jk6hu0trs4s.apps.googleus
 define('CLIENT_SECRET', 'HGkY7uoS5PZrJbzydGXGOq44');
 
 /* Google App Redirect Url */
-define('CLIENT_REDIRECT_URL', 'http://c9cb9aba686d.ngrok.io');// http://c9cb9aba686d.ngrok.io, $BASE_URL
+define('CLIENT_REDIRECT_URL', $BASE_URL);// http://c9cb9aba686d.ngrok.io, $BASE_URL
 
