@@ -77,7 +77,7 @@ function viewEmailList(data) {
 
 $("#sendGmail").on("click", function () {
   let receptEmail = $("#emails option:selected").text();
-  alert(receptEmail);
+  alert($("#emails option:selected").text());
   $(this).addClass("loading");
   $.ajax({
     type: "POST",
