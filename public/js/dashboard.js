@@ -77,6 +77,7 @@ function viewEmailList(data) {
 
 $("#sendGmail").on("click", function () {
   let receptEmail = $("#emails option:selected").text();
+  alert(receptEmail);
   $(this).addClass("loading");
   $.ajax({
     type: "POST",
@@ -91,7 +92,7 @@ $("#sendGmail").on("click", function () {
     error: function (response) {
       console.log("Failed Send Email", response);
       $("#sendGmail").removeClass("loading");
-      alert(response.message);
+      // alert(response.message);
     },
   });
 });
