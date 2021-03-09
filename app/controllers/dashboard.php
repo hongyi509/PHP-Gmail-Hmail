@@ -3,9 +3,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require_once '../app/vendor/phpmailer/phpmailer/src/Exception.php';
-require_once '../app/vendor/phpmailer/phpmailer/src/PHPMailer.php';
-require_once '../app/vendor/phpmailer/phpmailer/src/SMTP.php';
+// require_once '../app/vendor/phpmailer/phpmailer/src/Exception.php';
+// require_once '../app/vendor/phpmailer/phpmailer/src/PHPMailer.php';
+// require_once '../app/vendor/phpmailer/phpmailer/src/SMTP.php';
+require_once '../app/vendor/autoload.php';
 require_once '../app/services/GoogleContactService.php';
 class Dashboard extends Controller
 {
@@ -90,14 +91,23 @@ class Dashboard extends Controller
         // }
     
 // create an mailer object
-    $mail = new PHPMailer();
+    $mail = new PHPMailer(true);
     $mail->IsSMTP();
     $mail->Mailer = "smtp";
 
-    $mail->SMTPDebug  = 1;  
+    $mail->SMTPDebug  = 2;  
     $mail->SMTPAuth   = TRUE;
-    $mail->SMTPSecure = "tls";
+    // $mail->SMTPSecure = "tls";
+    $mail->SMTPSecure = "ssl"; 
     $mail->Port       = 587;
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );
+    $mail->SMTPKeepAlive = true;
     $mail->Host       = "smtp.gmail.com";
     $mail->Username   = "Huang.ming.business@gmail.com";
     $mail->Password   = "letitgo2018";
