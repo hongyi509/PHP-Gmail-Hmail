@@ -19,9 +19,8 @@ class Home extends Controller
             }
         }
         if (isset($_SESSION['access_token']) && isset($_COOKIE['refresh_token'])) {
-            $home_url = 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) ;
-            echo($home_url);
             header('Location: dashboard');
+            echo($_SERVER['HTTP_HOST'].'---'.dirname($_SERVER['PHP_SELF']));
         }
             // $home_url = 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) ;
  echo($_SERVER['HTTP_HOST'].'---'.dirname($_SERVER['PHP_SELF']));
