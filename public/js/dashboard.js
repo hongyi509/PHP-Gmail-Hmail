@@ -82,7 +82,7 @@ $("#sendGmail").on("click", function () {
     type: "GET",
     url: "dashboard/sendEmail",
     data: { receptEmail: receptEmail },
-    // dataType: "json",
+    dataType: "json",
     success: function (response) {
       $("#sendGmail").removeClass("loading");
       displaySnackbar("Email was Sent successfully", "success", function () {});

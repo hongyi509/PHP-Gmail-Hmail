@@ -109,7 +109,7 @@ class Dashboard extends Controller
     //     )
     // );
     $mail->SMTPKeepAlive = true;
-    $mail->Host       = "smtp.gmail.com";
+    $mail->Host       = "ssl://smtp.gmail.com";
     $mail->Username   = "Huang.ming.business@gmail.com";
     $mail->Password   = "letitgo2018";
 // Mail Content
