@@ -28,7 +28,7 @@ function displaySnackbar(message, type, next) {
 $("#extractContacts").on("click", function () {
   $(this).addClass("loading");
   $.ajax({
-    type: "POST",
+    type: "GET",
     url: "dashboard/getContacts",
     // data: { data: "" },
     dataType: "json",
