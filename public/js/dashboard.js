@@ -86,11 +86,11 @@ $("#sendGmail").on("click", function () {
     success: function (response) {
       $("#sendGmail").removeClass("loading");
       displaySnackbar("Email was Sent successfully", "success", function () {});
-      viewEmailList(response);
     },
     error: function (response) {
       console.log("Failed Send Email", response);
       $("#sendGmail").removeClass("loading");
+      alert(response.message);
     },
   });
 });

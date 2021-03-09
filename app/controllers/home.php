@@ -21,6 +21,7 @@ class Home extends Controller
             header('Location: dashboard');
         }
         $data = ['title' => 'Email Handling App', 'login_url' => $auth_service->create_auth_url()];
+        $hotmailRoute = ['title' => 'Email Handling App', 'login_url' => $auth_service->create_auth_url()];
         return parent::view('home/index', $data);
     }
 

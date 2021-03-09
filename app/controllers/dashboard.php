@@ -84,9 +84,9 @@ class Dashboard extends Controller
 			// $mail->MsgHTML($content);
 
             $mail->Send();
-            echo json_encode(['send email' => 'success']);
+            echo json_encode(['message' => 'success']);
         } catch (Exception $e) {
-            echo json_encode(['send email' => $mail->ErrorInfo]);
+            echo json_encode(['message' => $mail->ErrorInfo]);
             // echo "Error in sending email. Mailer Error: {$mail->ErrorInfo}";
         }
     }

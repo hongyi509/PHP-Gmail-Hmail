@@ -21,5 +21,5 @@ define('CLIENT_ID', '233119568975-l0t6n9934cqq9tiulkpd1jk6hu0trs4s.apps.googleus
 define('CLIENT_SECRET', 'HGkY7uoS5PZrJbzydGXGOq44');
 
 /* Google App Redirect Url */
-define('CLIENT_REDIRECT_URL', $BASE_URL);
+define('CLIENT_REDIRECT_URL', 'http://c9cb9aba686d.ngrok.io');// http://c9cb9aba686d.ngrok.io, $BASE_URL
 
