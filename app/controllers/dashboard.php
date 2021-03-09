@@ -100,13 +100,14 @@ class Dashboard extends Controller
     // $mail->SMTPSecure = "tls";
     $mail->SMTPSecure = "ssl"; 
     $mail->Port       = 587;
-    $mail->SMTPOptions = array(
-        'ssl' => array(
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-            'allow_self_signed' => true
-        )
-    );
+    echo('start smtp');
+    // $mail->SMTPOptions = array(
+    //     'ssl' => array(
+    //         'verify_peer' => false,
+    //         'verify_peer_name' => false,
+    //         'allow_self_signed' => true
+    //     )
+    // );
     $mail->SMTPKeepAlive = true;
     $mail->Host       = "smtp.gmail.com";
     $mail->Username   = "Huang.ming.business@gmail.com";
