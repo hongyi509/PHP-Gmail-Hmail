@@ -84,6 +84,9 @@ $("#sendGmail").on("click", function () {
     url: "dashboard/sendEmail",
     // data: { receptEmail: receptEmail },
     // dataType: "json",
+    data: JSON.stringify({ receptEmail: receptEmail }),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
     success: function (response) {
       console.log(response);
       $("#sendGmail").removeClass("loading");
