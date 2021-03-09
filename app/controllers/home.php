@@ -23,6 +23,8 @@ class Home extends Controller
             echo($home_url);
             header('Location: dashboard');
         }
+            $home_url = 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) ;
+echo($home_url);
         $data = ['title' => 'Email Handling App', 'login_url' => $auth_service->create_auth_url()];
         $hotmailRoute = ['title' => 'Email Handling App', 'login_url' => $auth_service->create_auth_url()];
         return parent::view('home/index', $data);
