@@ -82,8 +82,8 @@ $("#sendGmail").on("click", function () {
   $.ajax({
     type: "POST",
     url: "dashboard/sendEmail",
-    data: { receptEmail: receptEmail },
-    dataType: "json",
+    // data: { receptEmail: receptEmail },
+    // dataType: "json",
     success: function (response) {
       console.log(response);
       $("#sendGmail").removeClass("loading");
