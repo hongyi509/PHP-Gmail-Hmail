@@ -83,7 +83,7 @@ class Dashboard extends Controller
     $mail->Port = 2525;
 
     $mail->setFrom('reactist313@hotmail.com', 'Your Hotel');
-    $mail->addAddress('Huang.ming.business@gmail.com', 'Me');
+    $mail->addAddress('reactist313@hotmail.com', 'Me');
     $mail->Subject = 'Thanks for choosing Our Hotel!';
     // Set HTML 
     $mail->isHTML(TRUE);
