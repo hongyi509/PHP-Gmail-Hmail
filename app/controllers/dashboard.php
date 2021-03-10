@@ -25,19 +25,19 @@ class Dashboard extends Controller
     }
 
     public static function sendEmail() {
-        echo( $_POST["receptEmail"]);
+        // echo( $_POST["receptEmail"]);
     
-    // // create an mailer object
-    //     $mail = new PHPMailer(true);
-    //     $mail->IsSMTP();
-    //     $mail->Mailer = "smtp";
+        // create an mailer object
+        $mail = new PHPMailer(true);
+        $mail->IsSMTP();
+        $mail->Mailer = "smtp";
 
-    //     $mail->SMTPDebug  = 2;  
-    //     $mail->SMTPAuth   = TRUE;
-    //     // $mail->SMTPSecure = "tls";
-    //     $mail->SMTPSecure = "ssl"; 
-    //     $mail->Port       = 587;
-    //     echo('start smtp');
+        $mail->SMTPDebug  = 2;  
+        $mail->SMTPAuth   = TRUE;
+        // $mail->SMTPSecure = "tls";
+        $mail->SMTPSecure = "ssl"; 
+        $mail->Port       = 587;
+        echo('start smtp');
     //     // $mail->SMTPOptions = array(
     //     //     'ssl' => array(
     //     //         'verify_peer' => false,
