@@ -48,29 +48,29 @@ class Dashboard extends Controller
         $mail->Host       = "ssl://smtp.gmail.com";
         $mail->Username   = "Huang.ming.business@gmail.com";
         $mail->Password   = "letitgo2018";
+        // Mail Content
+        $mail->IsHTML(true);
+        $mail->AddAddress("reactist313@hotmail.com", "Sender Display Name");
+        $mail->SetFrom("reactist313@hotmail.com", "Recipient Display Name");
+        // $mail->AddReplyTo("destinatin.id@domain.com", "Recipient Display Name"); - Enable if this is different from the sender mail id.
+        // $mail->AddCC("destinatin.id@domain.com", "Sender Display Name"); - Add any CC 
+        $mail->Subject = "Test Email using PHP Mailer";
+        $content = "<b>This is a Test Email sent via SMTP Server using PHP mailer class.</b>";
+        // Attach file
+        // Directly attach f file
+        // $mail->addAttachment('img/loading.gif', 'loading.gif');
+        
+        // Build the attachment 
+        // $mail->AddStringAttachment(base64_decode("iVBORw0KGgoAAAANSUhEUgAAA"), "test.png", "base64", "image/png");
+        // Send Mail
+        $mail->MsgHTML($content); 
         echo('setting Mail object');
-    // // Mail Content
-    //     $mail->IsHTML(true);
-    //     $mail->AddAddress("reactist313@hotmail.com", "Sender Display Name");
-    //     $mail->SetFrom("reactist313@hotmail.com", "Recipient Display Name");
-    //     // $mail->AddReplyTo("destinatin.id@domain.com", "Recipient Display Name"); - Enable if this is different from the sender mail id.
-    //     // $mail->AddCC("destinatin.id@domain.com", "Sender Display Name"); - Add any CC 
-    //     $mail->Subject = "Test Email using PHP Mailer";
-    //     $content = "<b>This is a Test Email sent via SMTP Server using PHP mailer class.</b>";
-    // // Attach file
-    //     // Directly attach f file
-    //     // $mail->addAttachment('img/loading.gif', 'loading.gif');
-
-    //     // Build the attachment 
-    //     // $mail->AddStringAttachment(base64_decode("iVBORw0KGgoAAAANSUhEUgAAA"), "test.png", "base64", "image/png");
-    // // Send Mail
-    //     $mail->MsgHTML($content); 
-    //     if(!$mail->Send()) {
-    //     echo "Error while sending Email.";
-    //     var_dump($mail);
-    //     } else {
-    //     echo "Email sent successfully";
-    //     }
+        if(!$mail->Send()) {
+        echo "Error while sending Email.";
+        var_dump($mail);
+        } else {
+        echo "Email sent successfully";
+        }
     }
 
 }
