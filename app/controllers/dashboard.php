@@ -71,6 +71,6 @@ class Dashboard extends Controller
     //     } else {
     //     echo "Email sent successfully";
     //     }
-    // }
+    }
 
 }
