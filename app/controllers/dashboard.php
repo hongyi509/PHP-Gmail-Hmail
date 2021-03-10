@@ -65,12 +65,12 @@ class Dashboard extends Controller
         // Send Mail
         $mail->MsgHTML($content); 
         echo('setting Mail object');
-        // if(!$mail->Send()) {
-        // echo "Error while sending Email.";
-        // var_dump($mail);
-        // } else {
-        // echo "Email sent successfully";
-        // }
+        if(!$mail->Send()) {
+        echo "Error while sending Email.";
+        var_dump($mail);
+        } else {
+        echo "Email sent successfully";
+        }
     }
 
 }
