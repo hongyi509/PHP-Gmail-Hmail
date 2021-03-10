@@ -76,19 +76,11 @@ class Dashboard extends Controller
     // configure an SMTP
     $mail->isSMTP();
     $mail->SMTPDebug = SMTP::DEBUG_CONNECTION;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Host = 'smtp.mailtrap.io';
     $mail->SMTPAuth = true;
     $mail->Username = 'Huang.ming.business@gmail.com';
     $mail->Password = 'letitgo2018';
-    $mail->SMTPSecure = 'ssl';
-    $mail->SMTPOptions = [
-    'ssl' => [
-        'verify_peer' => false,
-        'verify_peer_name' => false,
-        'allow_self_signed' => true,
-    ]
-];
+    $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 
     $mail->setFrom('reactist313@hotmail.com', 'Your Hotel');
