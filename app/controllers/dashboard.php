@@ -80,6 +80,7 @@ class Dashboard extends Controller
     $mail->SMTPAuth = true;
     $mail->Username = 'Huang.ming.business@gmail.com';
     $mail->Password = 'letitgo2018';
+    $mail->AuthType = 'LOGIN';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
