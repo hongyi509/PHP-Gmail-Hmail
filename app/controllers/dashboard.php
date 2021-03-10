@@ -81,8 +81,15 @@ class Dashboard extends Controller
     $mail->SMTPAuth = true;
     $mail->Username = 'Huang.ming.business@gmail.com';
     $mail->Password = 'letitgo2018';
-    $mail->SMTPSecure = 'tls';
-    $mail->Port = 465;
+    $mail->SMTPSecure = 'ssl';
+    $mail->SMTPOptions = [
+    'ssl' => [
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true,
+    ]
+];
+    $mail->Port = 587;
 
     $mail->setFrom('reactist313@hotmail.com', 'Your Hotel');
     $mail->addAddress('reactist313@hotmail.com', 'Me');
