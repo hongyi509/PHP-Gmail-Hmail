@@ -37,18 +37,18 @@ class Dashboard extends Controller
         // $mail->SMTPSecure = "tls";
         $mail->SMTPSecure = "ssl"; 
         $mail->Port       = 587;
-        echo('start smtp');
-    //     // $mail->SMTPOptions = array(
-    //     //     'ssl' => array(
-    //     //         'verify_peer' => false,
-    //     //         'verify_peer_name' => false,
-    //     //         'allow_self_signed' => true
-    //     //     )
-    //     // );
-    //     $mail->SMTPKeepAlive = true;
-    //     $mail->Host       = "ssl://smtp.gmail.com";
-    //     $mail->Username   = "Huang.ming.business@gmail.com";
-    //     $mail->Password   = "letitgo2018";
+        $mail->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        );
+        $mail->SMTPKeepAlive = true;
+        $mail->Host       = "ssl://smtp.gmail.com";
+        $mail->Username   = "Huang.ming.business@gmail.com";
+        $mail->Password   = "letitgo2018";
+        echo('setting Mail object');
     // // Mail Content
     //     $mail->IsHTML(true);
     //     $mail->AddAddress("reactist313@hotmail.com", "Sender Display Name");
