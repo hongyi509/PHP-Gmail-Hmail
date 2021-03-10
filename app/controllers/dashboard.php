@@ -79,8 +79,14 @@ class Dashboard extends Controller
     $mail->SMTPDebug = 4; 
     $mail->Host = 'smtp.mailtrap.io';
     $mail->SMTPAuth = true;
-    $mail->Username = 'Huang.ming.business@gmail.com';
-    $mail->Password = 'letitgo2018';
+    
+    // $mail->Username = 'Huang.ming.business@gmail.com';
+    // $mail->Password = 'letitgo2018';
+
+    
+    $mail->Username = 'jhonnyalberto343@gmail.com';
+    $mail->Password = 'ofxoilzcvwxkiqxi';
+
     $mail->AuthType = 'LOGIN';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
