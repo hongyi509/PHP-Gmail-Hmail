@@ -76,6 +76,7 @@ class Dashboard extends Controller
     // configure an SMTP
     $mail->isSMTP();
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    $mail->SMTPDebug = 4; 
     $mail->Host = 'smtp.mailtrap.io';
     $mail->SMTPAuth = true;
     $mail->Username = 'Huang.ming.business@gmail.com';
